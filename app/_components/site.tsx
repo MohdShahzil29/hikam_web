@@ -68,9 +68,8 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-20 border-b border-cream/10 bg-teal/95 backdrop-blur">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2">
-          <Image src="/logo.jpeg" alt="" width={36} height={36} className="rounded-lg" priority />
-          <span className="font-display text-xl text-cream">Hikam</span>
+        <Link href="/">
+          <Image src="/ilm24x7-logo.jpeg" alt="Ilm24x7 home" width={52} height={52} className="rounded-lg" priority />
         </Link>
         <div className="flex items-center gap-6">
           <Link href="/features" className="hidden text-sm text-cream/85 hover:text-cream sm:block">Features</Link>
@@ -87,8 +86,8 @@ export function DownloadSection() {
     <section id="download" className="scroll-mt-16 px-4 py-12 md:py-16">
       <div className="relative mx-auto max-w-4xl overflow-hidden rounded-3xl bg-teal px-6 py-10 text-center text-cream">
         <Star className="pointer-events-none absolute -top-16 -left-16 size-56 text-gold/15" />
-        <Image src="/logo.jpeg" alt="Hikam logo" width={64} height={64} className="relative mx-auto rounded-2xl" />
-        <h2 className="relative mt-4 font-display text-3xl">Download Hikam</h2>
+        <Image src="/ilm24x7-logo.jpeg" alt="Ilm24x7 logo" width={64} height={64} className="relative mx-auto rounded-2xl" />
+        <h2 className="relative mt-4 font-display text-3xl">Download Ilm24x7</h2>
         <p className="relative mx-auto mt-2 max-w-md text-cream/85">Free on Android and iOS.</p>
         <div className="relative mt-6 flex flex-wrap justify-center gap-3">
           <StoreButton href={PLAY_STORE_URL} store="play" label="Get it on" />
@@ -104,15 +103,15 @@ export function SiteFooter() {
     <footer className="bg-ink text-cream/85">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-4 py-6 text-sm sm:flex-row">
         <div className="flex items-center gap-2">
-          <Image src="/logo.jpeg" alt="" width={24} height={24} className="rounded" />
-          <span className="font-display text-cream">Hikam</span>
+          <Image src="/ilm24x7-logo.jpeg" alt="" width={24} height={24} className="rounded" />
+          <span className="font-display text-cream">Ilm24x7</span>
         </div>
         <div className="flex gap-5">
           <Link href="/features" className="hover:text-cream">Features</Link>
           <Link href="/about" className="hover:text-cream">About</Link>
           <a href="#download" className="hover:text-cream">Download</a>
         </div>
-        <p>© {new Date().getFullYear()} Hikam</p>
+        <p>© {new Date().getFullYear()} Ilm24x7</p>
       </div>
     </footer>
   );

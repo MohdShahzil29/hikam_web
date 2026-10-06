@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import { DownloadSection, SiteFooter, SiteHeader, Star } from "../_components/site";
 
 export const metadata: Metadata = {
-  title: "About — Hikam",
-  description: "Why Hikam was built, what it stands for, and the person behind it.",
+  title: "About — Ilm24x7",
+  description: "Why Ilm24x7 was built, what it stands for, and the person behind it.",
 };
 
 const VALUES = [
   {
     title: "Every answer has a source",
     urdu: "دلیل",
-    text: "Hikam never makes things up. Every answer points to the ayah, hadith or fatwa page it comes from, so you can read it yourself.",
+    text: "Ilm24x7 never makes things up. Every answer points to the ayah, hadith or fatwa page it comes from, so you can read it yourself.",
   },
   {
     title: "Made for Urdu speakers",
@@ -20,7 +20,7 @@ const VALUES = [
   {
     title: "No outside AI",
     urdu: "امانت",
-    text: "Answers come from Hikam's own search over trusted books, not from a chatbot. Your questions are not sent to any AI company.",
+    text: "Answers come from Ilm24x7's own search over trusted books, not from a chatbot. Your questions are not sent to any AI company.",
   },
 ];
 
@@ -39,8 +39,8 @@ export default function About() {
         <section className="relative overflow-hidden bg-teal text-cream">
           <Star className="pointer-events-none absolute -top-24 -right-32 size-[380px] text-gold/15" />
           <div className="relative mx-auto max-w-3xl px-4 py-12 text-center md:py-14">
-            <p className="font-arabic text-2xl text-gold">حِکم کے بارے میں</p>
-            <h1 className="mt-2 font-display text-4xl sm:text-5xl">About Hikam</h1>
+            <p className="font-arabic text-2xl text-gold">علم 24x7 کے بارے میں</p>
+            <h1 className="mt-2 font-display text-4xl sm:text-5xl">About Ilm24x7</h1>
             <p className="mx-auto mt-3 max-w-lg text-cream/85">
               A companion for your deen: the Quran, Hadith and Fatawa in your pocket, with answers you can trust.
             </p>
@@ -49,7 +49,7 @@ export default function About() {
 
         <section className="mx-auto max-w-3xl px-4 py-12 md:py-14">
           <p className="text-xs font-semibold tracking-[0.3em] text-gold-deep">OUR STORY</p>
-          <h2 className="mt-2 font-display text-3xl text-text">Why Hikam</h2>
+          <h2 className="mt-2 font-display text-3xl text-text">Why Ilm24x7</h2>
           <div className="mt-4 space-y-4 text-text">
             <p>
               When a question about deen comes up, most of us search online and land on a dozen different answers,
@@ -57,12 +57,13 @@ export default function About() {
               Fatawa Razawiya and Bahar-e-Shariat, but those books are thousands of pages long and hard to search.
             </p>
             <p>
-              Hikam brings them together in one app. You can read them, listen to them, and simply ask. It also keeps
+              Ilm24x7 brings them together in one app. You can read them, listen to them, and simply ask. It also keeps
               the everyday things close: namaz times with azan alarms, the Qibla, tasbih and the 99 Names of Allah.
             </p>
             <p>
-              The name <span className="font-arabic text-lg text-gold-deep">حِکم</span> means{" "}
-              <em>wisdoms</em>, the plural of <em>hikmah</em>. That is what we hope every user takes away.
+              The name says it all. <span className="font-arabic text-lg text-gold-deep">علم</span>{" "}
+              (<em>ilm</em>) means knowledge, and <em>24x7</em> means it is there for you at any hour, whenever a
+              question comes to mind.
             </p>
           </div>
         </section>
@@ -93,7 +94,7 @@ export default function About() {
               <p className="text-sm font-semibold text-gold-deep">Founder &amp; Developer</p>
               <div className="mt-3 space-y-3 text-text">
                 <p>
-                  Hikam is a one-person mission. Shahzil designed and built every part of it, from the app in your
+                  Ilm24x7 is a one-person mission. Shahzil designed and built every part of it, from the app in your
                   hand to the server that answers your questions, with a single goal: anyone who speaks Urdu should
                   be able to reach authentic Islamic knowledge in seconds.
                 </p>
@@ -104,7 +105,7 @@ export default function About() {
                   volume, how to fix the broken letters by checking them against the Urdu of the Quran and Hadith.
                 </p>
                 <p>
-                  Then came the brain of Hikam: its own search engine, built from scratch. It understands that{" "}
+                  Then came the brain of Ilm24x7: its own search engine, built from scratch. It understands that{" "}
                   <em>roza</em>, <span className="font-arabic">روزہ</span> and <em>fasting</em> mean the same thing,
                   searches over 67,000 passages in an instant, and always shows the book and page an answer came from.
                   No borrowed chatbot, nothing guessed.
@@ -139,7 +140,7 @@ export default function About() {
           <div className="mx-auto max-w-3xl px-4 py-12 md:py-14">
             <h2 className="font-display text-3xl text-text">With thanks</h2>
             <p className="mt-3 text-text">
-              Hikam stands on the work of others. Heartfelt thanks to the API providers and contributors who made this
+              Ilm24x7 stands on the work of others. Heartfelt thanks to the API providers and contributors who made this
               journey possible.
             </p>
             <ul className="mt-5 grid gap-2 sm:grid-cols-3">

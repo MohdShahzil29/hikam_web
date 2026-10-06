@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { DownloadButton, DownloadSection, Phone, SiteFooter, SiteHeader, Star } from "../_components/site";
 
 export const metadata: Metadata = {
-  title: "Features — Hikam",
+  title: "Features — Ilm24x7",
   description:
-    "Namaz times with azan alarms, Quran with Kanz ul Imaan tarjuma and tafseer, seven hadith books, Fatawa Razawiya, Bahar-e-Shariat, Ask Hikam, Qibla and more.",
+    "Namaz times with azan alarms, Quran with Kanz ul Imaan tarjuma and tafseer, seven hadith books, Fatawa Razawiya, Bahar-e-Shariat, Ask Ilm24x7, Qibla and more.",
 };
 
 // Small screen header used inside every mock
@@ -133,7 +133,7 @@ function FatawaScreen() {
 function AskScreen() {
   return (
     <Phone>
-      <ScreenTitle en="Ask Hikam" ur="سوال کریں" />
+      <ScreenTitle en="Ask Ilm24x7" ur="سوال کریں" />
       <div className="space-y-2.5 bg-white p-3 pb-5">
         <p className="ml-auto w-fit rounded-2xl rounded-br-sm bg-teal px-3 py-2 text-xs text-cream">Roza kis par farz hai?</p>
         <div className="rounded-2xl rounded-bl-sm border border-gold/25 bg-white p-3">
@@ -217,10 +217,10 @@ const MAIN = [
     screen: <FatawaScreen />,
   },
   {
-    tag: "ASK HIKAM",
+    tag: "ASK ILM24X7",
     title: "Ask a question, get the source",
     urdu: "سوال کریں",
-    text: "Type the way you speak. Hikam finds the ayah, hadith or fatwa page that answers it, and shows you where it comes from.",
+    text: "Type the way you speak. Ilm24x7 finds the ayah, hadith or fatwa page that answers it, and shows you where it comes from.",
     points: ["Roman Urdu, Urdu or English", "Every answer comes with its reference", "Related topics to ask about next"],
     screen: <AskScreen />,
   },
@@ -261,7 +261,7 @@ export default function Features() {
           <Star className="pointer-events-none absolute -top-24 -right-32 size-[380px] text-gold/15" />
           <div className="relative mx-auto max-w-6xl px-4 py-12 text-center md:py-14">
             <p className="text-xs font-semibold tracking-[0.3em] text-gold">FEATURES</p>
-            <h1 className="mt-2 font-display text-4xl sm:text-5xl">Everything Hikam can do</h1>
+            <h1 className="mt-2 font-display text-4xl sm:text-5xl">Everything Ilm24x7 can do</h1>
             <p className="mx-auto mt-3 max-w-lg text-cream/85">
               From Fajr to Isha, from the Quran to the fatwa you were looking for, all in one app.
             </p>

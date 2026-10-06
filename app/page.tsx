@@ -89,7 +89,7 @@ export default function Home() {
               </h1>
               <p className="mt-2 font-arabic text-xl text-cream" dir="rtl">ہر سوال کا جواب، دلیل کے ساتھ</p>
               <p className="mx-auto mt-4 max-w-md text-cream/85 md:mx-0">
-                Ask in Roman Urdu, Urdu or English. Hikam answers from the Quran, Hadith and Fatawa Razawiya, and
+                Ask in Roman Urdu, Urdu or English. Ilm24x7 answers from the Quran, Hadith and Fatawa Razawiya, and
                 shows you the exact ayah, hadith or page it comes from.
               </p>
               <ul className="mt-5 flex flex-wrap justify-center gap-2 md:justify-start">
@@ -127,14 +127,14 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Ask Hikam */}
+        {/* Ask Ilm24x7 */}
         <section id="ask" className="scroll-mt-16 border-y border-gold/25 bg-white">
           <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-12 md:grid-cols-2 md:py-16">
             <div>
-              <p className="text-xs font-semibold tracking-[0.3em] text-gold-deep">ASK HIKAM</p>
+              <p className="text-xs font-semibold tracking-[0.3em] text-gold-deep">ASK ILM24X7</p>
               <h2 className="mt-2 font-display text-3xl text-text">Ask the way you speak</h2>
               <p className="mt-3 text-text">
-                Type in Roman Urdu, Urdu or English. Hikam searches the Quran, Hadith, Fatawa Razawiya and
+                Type in Roman Urdu, Urdu or English. Ilm24x7 searches the Quran, Hadith, Fatawa Razawiya and
                 Bahar-e-Shariat and shows you the exact ayah, hadith or page it comes from.
               </p>
               <dl className="mt-6 grid grid-cols-3 gap-3 text-center">

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { dicts, localHref, type Lang } from "../_i18n/dict";
 
 // Store links: replace with the real listings once the app is published
 const PLAY_STORE_URL = "#";
@@ -18,16 +19,19 @@ export function Star({ className }: { className?: string }) {
   );
 }
 
-export function DownloadButton({ className = "" }: { className?: string }) {
+// The line in the other language under a heading: Urdu in Amiri on English pages, small English on Urdu pages
+export const altClass = (lang: Lang) => (lang === "en" ? "font-arabic text-xl" : "text-xs font-semibold uppercase");
+
+export function DownloadButton({ lang, className = "" }: { lang: Lang; className?: string }) {
   return (
     <a
       href="#download"
-      className={`inline-flex h-11 items-center gap-2 rounded-full bg-gold px-5 text-sm font-semibold text-ink transition hover:brightness-110 ${className}`}
+      className={`inline-flex h-11 items-center gap-2 rounded-full bg-gold px-5 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:brightness-110 ${className}`}
     >
       <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden>
         <path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
-      Download
+      {dicts[lang].nav.download}
     </a>
   );
 }
@@ -36,7 +40,8 @@ function StoreButton({ href, store, label }: { href: string; store: string; labe
   return (
     <a
       href={href}
-      className="flex h-13 min-w-44 items-center gap-3 rounded-xl border border-cream/20 bg-ink px-4 text-cream transition hover:border-gold"
+      dir="ltr"
+      className="flex h-13 min-w-44 items-center gap-3 rounded-xl border border-cream/20 bg-ink px-4 text-cream transition hover:-translate-y-0.5 hover:border-gold"
     >
       {store === "play" ? (
         <svg viewBox="0 0 24 24" className="size-6" fill="currentColor" aria-hidden>
@@ -55,50 +60,70 @@ function StoreButton({ href, store, label }: { href: string; store: string; labe
   );
 }
 
-// Phone frame around a mock screen
+// Phone frame around a mock screen. The app's screens read left to right in both languages.
 export function Phone({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
-    <div className={`relative mx-auto w-64 rounded-[2.5rem] border-[6px] border-ink bg-ink shadow-xl shadow-teal/20 sm:w-72 ${className}`}>
+    <div
+      dir="ltr"
+      className={`relative mx-auto w-64 rounded-[2.5rem] border-[6px] border-ink bg-ink leading-normal shadow-xl shadow-teal/20 sm:w-72 ${className}`}
+    >
       <div className="overflow-hidden rounded-[2rem]">{children}</div>
     </div>
   );
 }
 
-export function SiteHeader() {
+// `path` is the current page without the language prefix, so the switch keeps you on the same page
+export function SiteHeader({ lang, path }: { lang: Lang; path: string }) {
+  const t = dicts[lang].nav;
+  const other: Lang = lang === "en" ? "ur" : "en";
   return (
     <header className="sticky top-0 z-20 border-b border-cream/10 bg-teal/95 backdrop-blur">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-        <Link href="/">
-          <Image src="/ilm24x7-logo.jpeg" alt="Ilm24x7 home" width={52} height={52} className="rounded-lg" priority />
+        <Link href={localHref(lang, "/")}>
+          <Image src="/ilm24x7-logo.jpeg" alt={t.home} width={52} height={52} className="rounded-lg" priority />
         </Link>
-        <div className="flex items-center gap-6">
-          <Link href="/features" className="hidden text-sm text-cream/85 hover:text-cream sm:block">Features</Link>
-          <Link href="/about" className="hidden text-sm text-cream/85 hover:text-cream sm:block">About</Link>
-          <DownloadButton className="h-9 px-4" />
+        <div className="flex items-center gap-4 sm:gap-6">
+          <Link href={localHref(lang, "/features")} className="hidden text-sm text-cream/85 hover:text-cream sm:block">
+            {t.features}
+          </Link>
+          <Link href={localHref(lang, "/about")} className="hidden text-sm text-cream/85 hover:text-cream sm:block">
+            {t.about}
+          </Link>
+          <a
+            href={localHref(other, path)}
+            hrefLang={other}
+            lang={other}
+            className={`rounded-full border border-cream/30 px-3 py-1 text-cream hover:border-gold hover:text-gold ${other === "ur" ? "text-sm" : "text-xs font-semibold"}`}
+          >
+            {t.other}
+          </a>
+          <DownloadButton lang={lang} className="h-9 px-4" />
         </div>
       </nav>
     </header>
   );
 }
 
-export function DownloadSection() {
+export function DownloadSection({ lang }: { lang: Lang }) {
+  const t = dicts[lang].download;
   return (
     <section id="download" className="scroll-mt-16 px-4 py-12 md:py-16">
-      <div className="relative mx-auto max-w-4xl overflow-hidden rounded-3xl bg-teal px-6 py-10 text-center text-cream">
-        <Star className="pointer-events-none absolute -top-16 -left-16 size-56 text-gold/15" />
+      <div className="reveal relative mx-auto max-w-4xl overflow-hidden rounded-3xl bg-teal px-6 py-10 text-center text-cream">
+        <Star className="spin-slow pointer-events-none absolute -top-16 -left-16 size-56 text-gold/15" />
         <Image src="/ilm24x7-logo.jpeg" alt="Ilm24x7 logo" width={64} height={64} className="relative mx-auto rounded-2xl" />
-        <h2 className="relative mt-4 font-display text-3xl">Download Ilm24x7</h2>
-        <p className="relative mx-auto mt-2 max-w-md text-cream/85">Free on Android and iOS.</p>
+        <h2 className="relative mt-4 font-display text-3xl">{t.title}</h2>
+        <p className="relative mx-auto mt-2 max-w-md text-cream/85">{t.text}</p>
         <div className="relative mt-6 flex flex-wrap justify-center gap-3">
-          <StoreButton href={PLAY_STORE_URL} store="play" label="Get it on" />
-          <StoreButton href={APP_STORE_URL} store="apple" label="Download on the" />
+          <StoreButton href={PLAY_STORE_URL} store="play" label={t.play} />
+          <StoreButton href={APP_STORE_URL} store="apple" label={t.apple} />
         </div>
       </div>
     </section>
   );
 }
 
-export function SiteFooter() {
+export function SiteFooter({ lang }: { lang: Lang }) {
+  const t = dicts[lang].nav;
   return (
     <footer className="bg-ink text-cream/85">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-4 py-6 text-sm sm:flex-row">
@@ -107,11 +132,11 @@ export function SiteFooter() {
           <span className="font-display text-cream">Ilm24x7</span>
         </div>
         <div className="flex gap-5">
-          <Link href="/features" className="hover:text-cream">Features</Link>
-          <Link href="/about" className="hover:text-cream">About</Link>
-          <a href="#download" className="hover:text-cream">Download</a>
+          <Link href={localHref(lang, "/features")} className="hover:text-cream">{t.features}</Link>
+          <Link href={localHref(lang, "/about")} className="hover:text-cream">{t.about}</Link>
+          <a href="#download" className="hover:text-cream">{t.download}</a>
         </div>
-        <p>© {new Date().getFullYear()} Ilm24x7</p>
+        <p dir="ltr">© {new Date().getFullYear()} Ilm24x7</p>
       </div>
     </footer>
   );

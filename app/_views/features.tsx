@@ -1,11 +1,5 @@
-import type { Metadata } from "next";
-import { DownloadButton, DownloadSection, Phone, SiteFooter, SiteHeader, Star } from "../_components/site";
-
-export const metadata: Metadata = {
-  title: "Features — Ilm24x7",
-  description:
-    "Namaz times with azan alarms, Quran with Kanz ul Imaan tarjuma and tafseer, seven hadith books, Fatawa Razawiya, Bahar-e-Shariat, Ask Ilm24x7, Qibla and more.",
-};
+import { altClass, DownloadButton, DownloadSection, Phone, SiteFooter, SiteHeader, Star } from "../_components/site";
+import { dicts, type Lang } from "../_i18n/dict";
 
 // Small screen header used inside every mock
 function ScreenTitle({ en, ur }: { en: string; ur: string }) {
@@ -183,66 +177,6 @@ function QiblaScreen() {
   );
 }
 
-const MAIN = [
-  {
-    tag: "NAMAZ",
-    title: "Never miss a namaz",
-    urdu: "اوقاتِ نماز",
-    text: "Prayer times worked out for exactly where you are, with a live countdown to the next one.",
-    points: ["Azan, chime or beep alarm for each prayer", "A week of alarms set ahead automatically", "Hijri date on the home screen"],
-    screen: <PrayerScreen />,
-  },
-  {
-    tag: "QURAN",
-    title: "Read, understand, listen",
-    urdu: "قرآن مجید",
-    text: "The full Quran in Arabic with the Kanz ul Imaan tarjuma, and tafseer when you want to go deeper.",
-    points: ["Urdu, English and Hindi tarjuma", "Tafseer volumes to read in the app", "Recitation by Mishary Alafasy"],
-    screen: <QuranScreen />,
-  },
-  {
-    tag: "HADITH",
-    title: "Seven hadith books",
-    urdu: "احادیث",
-    text: "The six major collections and Muwatta Malik, in Urdu and English.",
-    points: ["Bukhari, Muslim, Tirmidhi, Abu Dawud", "Nasai, Ibn Majah and Muwatta Malik", "Hadith number with every narration"],
-    screen: <HadithScreen />,
-  },
-  {
-    tag: "FATAWA",
-    title: "A fiqh library in your pocket",
-    urdu: "فتاویٰ",
-    text: "Fatawa Razawiya and Bahar-e-Shariat, page by page, on a shelf that remembers where you stopped.",
-    points: ["All 30 jild of Fatawa Razawiya", "Bahar-e-Shariat, every hissa", "Continue reading from the home screen"],
-    screen: <FatawaScreen />,
-  },
-  {
-    tag: "ASK ILM24X7",
-    title: "Ask a question, get the source",
-    urdu: "سوال کریں",
-    text: "Type the way you speak. Ilm24x7 finds the ayah, hadith or fatwa page that answers it, and shows you where it comes from.",
-    points: ["Roman Urdu, Urdu or English", "Every answer comes with its reference", "Related topics to ask about next"],
-    screen: <AskScreen />,
-  },
-  {
-    tag: "QIBLA",
-    title: "Qibla, wherever you are",
-    urdu: "قبلہ",
-    text: "A compass that turns with your phone and points to the Kaaba, at home or travelling.",
-    points: ["Turns with your phone's compass", "Shows the exact angle to the Kaaba", "Handy when travelling"],
-    screen: <QiblaScreen />,
-  },
-];
-
-const MORE = [
-  { title: "Tasbih", urdu: "تسبیح", text: "A counter with SubhanAllah, Alhamdulillah, Allahu Akbar and more." },
-  { title: "99 Names", urdu: "اسماء الحسنیٰ", text: "The beautiful names of Allah with their meanings." },
-  { title: "Ramzan", urdu: "رمضان", text: "Everything about the month of fasting in one place." },
-  { title: "Hajj", urdu: "حج", text: "A guide to the pilgrimage, step by step." },
-  { title: "Pillars of Islam", urdu: "ارکانِ اسلام", text: "The five pillars, explained simply." },
-  { title: "Light & Dark", urdu: "روشنی", text: "Easy on the eyes, day or night." },
-];
-
 function Check() {
   return (
     <svg viewBox="0 0 24 24" className="mt-0.5 size-4 shrink-0 text-gold-deep" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden>
@@ -251,33 +185,35 @@ function Check() {
   );
 }
 
-export default function Features() {
+// One mock screen per row of the feature list, in the same order as the dictionary's `main`
+const SCREENS = [<PrayerScreen key="p" />, <QuranScreen key="q" />, <HadithScreen key="h" />, <FatawaScreen key="f" />, <AskScreen key="a" />, <QiblaScreen key="k" />];
+
+export default function FeaturesView({ lang }: { lang: Lang }) {
+  const t = dicts[lang].features;
   return (
     <>
-      <SiteHeader />
+      <SiteHeader lang={lang} path="/features" />
 
       <main>
         <section className="relative overflow-hidden bg-teal text-cream">
-          <Star className="pointer-events-none absolute -top-24 -right-32 size-[380px] text-gold/15" />
+          <Star className="spin-slow pointer-events-none absolute -top-24 -right-32 size-[380px] text-gold/15" />
           <div className="relative mx-auto max-w-6xl px-4 py-12 text-center md:py-14">
-            <p className="text-xs font-semibold tracking-[0.3em] text-gold">FEATURES</p>
-            <h1 className="mt-2 font-display text-4xl sm:text-5xl">Everything Ilm24x7 can do</h1>
-            <p className="mx-auto mt-3 max-w-lg text-cream/85">
-              From Fajr to Isha, from the Quran to the fatwa you were looking for, all in one app.
-            </p>
+            <p className="rise text-xs font-semibold tracking-[0.3em] text-gold">{t.tag}</p>
+            <h1 className="rise rise-1 mt-2 font-display text-4xl sm:text-5xl">{t.title}</h1>
+            <p className="rise rise-2 mx-auto mt-3 max-w-lg text-cream/85">{t.text}</p>
           </div>
         </section>
 
         <div className="mx-auto max-w-6xl px-4">
-          {MAIN.map((f, i) => (
+          {t.main.map((f, i) => (
             <section
               key={f.tag}
               className={`grid items-center gap-8 py-10 md:grid-cols-2 md:gap-12 md:py-14 ${i > 0 ? "border-t border-gold/25" : ""}`}
             >
-              <div className={i % 2 ? "md:order-2" : ""}>
+              <div className={`reveal ${i % 2 ? "md:order-2" : ""}`}>
                 <div className="flex items-center gap-3">
                   <span className="text-xs font-semibold tracking-[0.3em] text-gold-deep">{f.tag}</span>
-                  <span className="font-arabic text-lg text-gold-deep">{f.urdu}</span>
+                  <span className={`text-gold-deep ${lang === "en" ? "font-arabic text-lg" : "text-xs font-semibold"}`}><bdi>{f.alt}</bdi></span>
                 </div>
                 <h2 className="mt-2 font-display text-3xl text-text">{f.title}</h2>
                 <p className="mt-3 text-text">{f.text}</p>
@@ -289,20 +225,23 @@ export default function Features() {
                     </li>
                   ))}
                 </ul>
-                <DownloadButton className="mt-6" />
+                <DownloadButton lang={lang} className="mt-6" />
               </div>
-              <div className={i % 2 ? "md:order-1" : ""}>{f.screen}</div>
+              <div className={`reveal ${i % 2 ? "md:order-1" : ""}`}>{SCREENS[i]}</div>
             </section>
           ))}
         </div>
 
         <section className="border-y border-gold/25 bg-white">
           <div className="mx-auto max-w-6xl px-4 py-12 md:py-14">
-            <h2 className="font-display text-3xl text-text">And there&apos;s more</h2>
+            <h2 className="reveal font-display text-3xl text-text">{t.moreTitle}</h2>
             <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {MORE.map((f) => (
-                <article key={f.title} className="rounded-2xl border border-gold/25 bg-white p-5">
-                  <p className="font-arabic text-xl text-gold-deep">{f.urdu}</p>
+              {t.more.map((f) => (
+                <article
+                  key={f.title}
+                  className="reveal rounded-2xl border border-gold/25 bg-white p-5 transition hover:-translate-y-1 hover:border-gold"
+                >
+                  <p className={`text-gold-deep ${altClass(lang)}`}><bdi>{f.alt}</bdi></p>
                   <h3 className="mt-1 font-display text-xl text-text">{f.title}</h3>
                   <p className="mt-2 text-sm text-text">{f.text}</p>
                 </article>
@@ -311,10 +250,10 @@ export default function Features() {
           </div>
         </section>
 
-        <DownloadSection />
+        <DownloadSection lang={lang} />
       </main>
 
-      <SiteFooter />
+      <SiteFooter lang={lang} />
     </>
   );
 }

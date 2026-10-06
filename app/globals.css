@@ -10,9 +10,10 @@
   --color-paper: #ffffff;
   --color-text: #1c2a2e;
 
-  --font-sans: var(--font-manrope);
-  --font-display: var(--font-marcellus);
-  --font-arabic: var(--font-amiri);
+  /* Urdu letters fall through to Nastaliq on the Urdu pages (the variable is unset elsewhere) */
+  --font-sans: var(--font-manrope), var(--font-nastaliq, system-ui), sans-serif;
+  --font-display: var(--font-marcellus), var(--font-nastaliq, serif), serif;
+  --font-arabic: var(--font-amiri), serif;
 }
 
 html {
@@ -22,5 +23,67 @@ html {
 body {
   background: var(--color-paper);
   color: var(--color-text);
-  font-family: var(--font-manrope), system-ui, sans-serif;
+  font-family: var(--font-manrope), var(--font-nastaliq, system-ui), sans-serif;
+}
+
+/* Nastaliq is tall and breaks apart when letters are spaced out */
+:root:lang(ur) body {
+  line-height: 2.1;
+}
+:root:lang(ur) :is(h1, h2, h3) {
+  line-height: 1.9;
+}
+:root:lang(ur) * {
+  letter-spacing: 0 !important;
+}
+
+/* Motion: an entrance on load, sections that rise in as they scroll into view, and a slow float */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+@keyframes float {
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rise {
+    animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .rise-1 {
+    animation-delay: 0.1s;
+  }
+  .rise-2 {
+    animation-delay: 0.2s;
+  }
+  .rise-3 {
+    animation-delay: 0.3s;
+  }
+  .rise-4 {
+    animation-delay: 0.4s;
+  }
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+  .spin-slow {
+    animation: spin 90s linear infinite;
+  }
+
+  /* Browsers without scroll-driven animations just show the content */
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 45%;
+    }
+  }
 }

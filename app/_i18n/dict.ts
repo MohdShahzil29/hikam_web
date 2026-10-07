@@ -9,7 +9,7 @@ const en = {
   download: {
     title: "Download Ilm24x7",
     text: "Free on Android and iOS.",
-    play: "Get it on",
+    play: "Download for",
     apple: "Download on the",
   },
   home: {
@@ -193,7 +193,7 @@ const ur: Dict = {
   download: {
     title: "علم 24x7 ڈاؤن لوڈ کریں",
     text: "اینڈرائیڈ اور آئی فون پر بالکل مفت۔",
-    play: "Get it on",
+    play: "Download for",
     apple: "Download on the",
   },
   home: {

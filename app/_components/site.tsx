@@ -2,8 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { dicts, localHref, type Lang } from "../_i18n/dict";
 
-// Store links: replace with the real listings once the app is published
-const PLAY_STORE_URL = "#";
+// Android APK on Google Drive. `confirm=t` skips Drive's "too large to scan" page, and Drive sends the file as an
+// attachment, so clicking downloads it right away without leaving the page.
+const APK_URL =
+  "https://drive.usercontent.google.com/download?id=1LguVNaFKkNOGvmCpv-1Zo4CuiXpoOYcd&export=download&confirm=t";
+// Replace with the real listing once the app is on the App Store
 const APP_STORE_URL = "#";
 
 // The 8-point star the app uses as its motif
@@ -25,7 +28,8 @@ export const altClass = (lang: Lang) => (lang === "en" ? "font-arabic text-xl" :
 export function DownloadButton({ lang, className = "" }: { lang: Lang; className?: string }) {
   return (
     <a
-      href="#download"
+      href={APK_URL}
+      download
       className={`inline-flex h-11 items-center gap-2 rounded-full bg-gold px-5 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:brightness-110 ${className}`}
     >
       <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden>
@@ -40,12 +44,13 @@ function StoreButton({ href, store, label }: { href: string; store: string; labe
   return (
     <a
       href={href}
+      download={store === "play" || undefined}
       dir="ltr"
       className="flex h-13 min-w-44 items-center gap-3 rounded-xl border border-cream/20 bg-ink px-4 text-cream transition hover:-translate-y-0.5 hover:border-gold"
     >
       {store === "play" ? (
-        <svg viewBox="0 0 24 24" className="size-6" fill="currentColor" aria-hidden>
-          <path d="M3.6 2.3c-.3.3-.4.7-.4 1.2v17c0 .5.1.9.4 1.2l9.5-9.7L3.6 2.3Zm10.6 10.8 2.7 2.7-11.4 6.5 8.7-9.2Zm0-2.2L5.5 1.7l11.4 6.5-2.7 2.7Zm4-1.7 3 1.7c.9.5.9 1.8 0 2.3l-3 1.7-3-3 3-2.7Z" />
+        <svg viewBox="0 0 24 24" className="size-6" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+          <path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       ) : (
         <svg viewBox="0 0 24 24" className="size-6" fill="currentColor" aria-hidden>
@@ -54,7 +59,7 @@ function StoreButton({ href, store, label }: { href: string; store: string; labe
       )}
       <span className="leading-tight">
         <span className="block text-[10px] uppercase tracking-wider text-cream/85">{label}</span>
-        <span className="block text-base font-semibold">{store === "play" ? "Google Play" : "App Store"}</span>
+        <span className="block text-base font-semibold">{store === "play" ? "Android" : "App Store"}</span>
       </span>
     </a>
   );
@@ -114,7 +119,7 @@ export function DownloadSection({ lang }: { lang: Lang }) {
         <h2 className="relative mt-4 font-display text-3xl">{t.title}</h2>
         <p className="relative mx-auto mt-2 max-w-md text-cream/85">{t.text}</p>
         <div className="relative mt-6 flex flex-wrap justify-center gap-3">
-          <StoreButton href={PLAY_STORE_URL} store="play" label={t.play} />
+          <StoreButton href={APK_URL} store="play" label={t.play} />
           <StoreButton href={APP_STORE_URL} store="apple" label={t.apple} />
         </div>
       </div>

@@ -5,7 +5,7 @@ export type Lang = "en" | "ur";
 export const localHref = (lang: Lang, path: string) => (lang === "ur" ? (path === "/" ? "/ur" : `/ur${path}`) : path);
 
 const en = {
-  nav: { features: "Features", about: "About", download: "Download", other: "اردو", home: "Ilm24x7 home" },
+  nav: { features: "Features", about: "About", download: "Download", privacy: "Privacy", other: "اردو", home: "Ilm24x7 home" },
   download: {
     title: "Download Ilm24x7",
     text: "Free on Android and iOS.",
@@ -177,19 +177,119 @@ const en = {
     ],
     thanksTitle: "With thanks",
     thanksText:
-      "Ilm24x7 stands on the work of others. Heartfelt thanks to the API providers and contributors who made this journey possible.",
+      "Ilm24x7 stands on the work of others. Heartfelt thanks to the authors, translators and publishers of these books, and to the API providers and contributors who made this journey possible.",
     thanks: [
+      { name: "Kanzul Iman", what: "Imam Ahmad Raza Khan — Urdu translation of the Quran" },
+      { name: "Kanz ul Imaan (English)", what: "Translated by Aqib Farid Al Qadri" },
+      { name: "Kanzul Iman (Hindi)", what: "With Khazain-ul-Irfan · Maktaba-tul-Madina, Dawat-e-Islami" },
+      { name: "Fatawa Razawiya", what: "Imam Ahmad Raza Khan · digital edition by Dawat-e-Islami" },
+      { name: "Bahar-e-Shariat", what: "Mufti Amjad Ali Azmi · Maktaba-tul-Madina" },
       { name: "AlQuran Cloud", what: "Quran text and recitation" },
       { name: "Hadith API by Fawaz Ahmed", what: "Hadith collections" },
       { name: "Adhan", what: "Prayer time calculation" },
     ],
+    rightsText:
+      "All books, translations and recordings belong to their authors and publishers, and are shared in Ilm24x7 for free, with gratitude, to spread knowledge. If you hold the rights to any of them and want it removed, write to support@ilm24x7.in and we will remove it promptly.",
+  },
+  privacy: {
+    meta: {
+      title: "Privacy Policy — Ilm24x7",
+      description: "What the Ilm24x7 app collects, why, and what it never does with your data.",
+    },
+    alt: "رازداری کی پالیسی",
+    title: "Privacy Policy",
+    updated: "Last updated: October 2026",
+    intro:
+      "Ilm24x7 is an Islamic app for reading the Quran, Hadith and Fatawa, namaz times with azan alarms, the Qibla and more. This policy explains what information the app uses, why, and your choices. In short: there are no accounts, no ads and no tracking, and your location never leaves your phone.",
+    sections: [
+      {
+        title: "Your location",
+        points: [
+          "With your permission, the app reads your location to calculate namaz times and the Qibla direction.",
+          "This calculation happens on your phone. Your location is not sent to our server or to anyone else, and it is only saved on your phone.",
+          "Location is used only while the app is open; the app does not track you in the background. You can deny or turn off location at any time.",
+        ],
+      },
+      {
+        title: "Questions you ask",
+        points: [
+          "When you ask a question in Ask Ilm24x7, the text of the question is sent to our server so it can search the books and send back the answer.",
+          "We do not ask for your name, email, phone number or any account, so questions are not linked to you. Your past chats are saved only on your phone, and you can delete them in Chat history.",
+          "Questions are answered by Ilm24x7's own search engine. They are not sent to any AI company.",
+        ],
+      },
+      {
+        title: "Feedback",
+        points: [
+          "If you tap 👍 or 👎 under an answer, we store that rating with the question, the answer that was shown, the language, and any comment you choose to write.",
+          "We use this only to find and fix wrong or weak answers. It contains no name, email or device identifier.",
+        ],
+      },
+      {
+        title: "Data kept on your phone",
+        points: [
+          "Saved chats, bookmarked passages, reading progress, your daily goal and streak, alarm and reminder settings, theme and text size are stored only on your phone.",
+          "Clearing the app's data or uninstalling the app deletes them.",
+        ],
+      },
+      {
+        title: "Notifications and alarms",
+        points: [
+          "Namaz alarms and the Friday (Jumma) reminder are scheduled on your phone and work without sending anything to us. You can turn them off in the app or in your phone's settings.",
+        ],
+      },
+      {
+        title: "Server logs",
+        points: [
+          "Like any website, our server keeps short-lived technical logs (such as IP address, time and the request made) to keep the service secure and fix problems. They are not used to identify or profile you.",
+        ],
+      },
+      {
+        title: "Content from other services",
+        points: [
+          "The app downloads book content from these providers: AlQuran Cloud (Quran text and recitation), the Hadith API by Fawaz Ahmed (via jsDelivr), and Cloudflare R2 and Cloudinary (book PDFs). When your phone downloads from them, they receive your IP address as part of the request, under their own privacy policies. We do not share any other information with them.",
+          "The app is distributed through Google Play, which has its own privacy policy.",
+        ],
+      },
+      {
+        title: "What we never do",
+        points: [
+          "No accounts or sign-in. No advertising. No analytics or tracking tools. We do not sell, rent or share your information.",
+        ],
+      },
+      {
+        title: "Children",
+        points: [
+          "Ilm24x7 is a general-audience app and is not directed at children under 13. We do not knowingly collect personal information from children.",
+        ],
+      },
+      {
+        title: "Security",
+        points: ["All communication between the app and our server uses encrypted HTTPS connections."],
+      },
+      {
+        title: "Your choices",
+        points: [
+          "You can deny the location or notification permission, delete your chat history, or clear the app's data at any time. To ask about or remove feedback you sent, write to us with the question and roughly when you sent it.",
+        ],
+      },
+      {
+        title: "Changes to this policy",
+        points: [
+          "If this policy changes, we will update this page and the date above. Important changes will also be mentioned in the app's update notes.",
+        ],
+      },
+    ],
+    contactTitle: "Contact",
+    contactText: "Questions about this policy or your data:",
+    email: "support@ilm24x7.in",
   },
 };
 
 export type Dict = typeof en;
 
 const ur: Dict = {
-  nav: { features: "خصوصیات", about: "ہمارے بارے میں", download: "ڈاؤن لوڈ", other: "English", home: "علم 24x7 ہوم" },
+  nav: { features: "خصوصیات", about: "ہمارے بارے میں", download: "ڈاؤن لوڈ", privacy: "پرائیویسی", other: "English", home: "علم 24x7 ہوم" },
   download: {
     title: "علم 24x7 ڈاؤن لوڈ کریں",
     text: "اینڈرائیڈ اور آئی فون پر بالکل مفت۔",
@@ -361,12 +461,112 @@ const ur: Dict = {
     ],
     thanksTitle: "شکریہ",
     thanksText:
-      "علم 24x7 دوسروں کی محنت پر کھڑا ہے۔ ان تمام API فراہم کرنے والوں اور معاونین کا دل سے شکریہ جنہوں نے یہ سفر ممکن بنایا۔",
+      "علم 24x7 دوسروں کی محنت پر کھڑا ہے۔ ان کتابوں کے مصنفین، مترجمین اور ناشرین، اور ان تمام API فراہم کرنے والوں اور معاونین کا دل سے شکریہ جنہوں نے یہ سفر ممکن بنایا۔",
     thanks: [
+      { name: "کنز الایمان", what: "امام احمد رضا خان — قرآن کا اردو ترجمہ" },
+      { name: "Kanz ul Imaan (English)", what: "ترجمہ: عاقب فرید القادری" },
+      { name: "کنز الایمان (ہندی)", what: "خزائن العرفان کے ساتھ · مکتبۃ المدینہ، دعوتِ اسلامی" },
+      { name: "فتاویٰ رضویہ", what: "امام احمد رضا خان · ڈیجیٹل ایڈیشن: دعوتِ اسلامی" },
+      { name: "بہارِ شریعت", what: "مفتی امجد علی اعظمی · مکتبۃ المدینہ" },
       { name: "AlQuran Cloud", what: "قرآن کا متن اور تلاوت" },
       { name: "Hadith API by Fawaz Ahmed", what: "احادیث کے مجموعے" },
       { name: "Adhan", what: "نماز کے اوقات کا حساب" },
     ],
+    rightsText:
+      "تمام کتابیں، تراجم اور تلاوتیں ان کے مصنفین اور ناشرین کی ملکیت ہیں، اور علم پھیلانے کے لیے شکریے کے ساتھ علم 24x7 میں مفت پیش کی گئی ہیں۔ اگر آپ ان میں سے کسی کے حقوق رکھتے ہیں اور اسے ہٹوانا چاہتے ہیں تو support@ilm24x7.in پر لکھیں، ہم فوراً ہٹا دیں گے۔",
+  },
+  privacy: {
+    meta: {
+      title: "رازداری کی پالیسی — علم 24x7",
+      description: "علم 24x7 ایپ کون سی معلومات استعمال کرتی ہے، کیوں، اور آپ کے ڈیٹا کے ساتھ کیا کبھی نہیں کرتی۔",
+    },
+    alt: "Privacy Policy",
+    title: "رازداری کی پالیسی",
+    updated: "آخری تبدیلی: اکتوبر 2026",
+    intro:
+      "علم 24x7 ایک اسلامی ایپ ہے جس میں قرآن، حدیث اور فتاویٰ، اذان کے الارم کے ساتھ اوقاتِ نماز، قبلہ اور بہت کچھ ہے۔ یہ پالیسی بتاتی ہے کہ ایپ کون سی معلومات استعمال کرتی ہے، کیوں، اور آپ کے اختیارات کیا ہیں۔ مختصر یہ کہ: نہ کوئی اکاؤنٹ، نہ اشتہار، نہ ٹریکنگ، اور آپ کی لوکیشن کبھی آپ کے فون سے باہر نہیں جاتی۔",
+    sections: [
+      {
+        title: "آپ کی لوکیشن",
+        points: [
+          "آپ کی اجازت سے ایپ آپ کی لوکیشن لیتی ہے تاکہ نماز کے اوقات اور قبلہ کی سمت معلوم کی جا سکے۔",
+          "یہ حساب آپ کے فون پر ہی ہوتا ہے۔ آپ کی لوکیشن نہ ہمارے سرور کو بھیجی جاتی ہے نہ کسی اور کو، اور صرف آپ کے فون میں محفوظ رہتی ہے۔",
+          "لوکیشن صرف اس وقت استعمال ہوتی ہے جب ایپ کھلی ہو؛ ایپ پس منظر میں آپ کو ٹریک نہیں کرتی۔ آپ جب چاہیں لوکیشن کی اجازت نہ دیں یا بند کر دیں۔",
+        ],
+      },
+      {
+        title: "آپ کے سوالات",
+        points: [
+          "جب آپ ”سوال پوچھیں“ میں کوئی سوال لکھتے ہیں تو سوال کا متن ہمارے سرور کو بھیجا جاتا ہے تاکہ وہ کتابوں میں تلاش کر کے جواب واپس بھیج سکے۔",
+          "ہم آپ کا نام، ای میل، فون نمبر یا کوئی اکاؤنٹ نہیں مانگتے، اس لیے سوالات آپ سے منسوب نہیں ہوتے۔ آپ کی پچھلی گفتگو صرف آپ کے فون میں محفوظ رہتی ہے اور آپ اسے ”پچھلی گفتگو“ سے مٹا سکتے ہیں۔",
+          "سوالات کا جواب علم 24x7 کا اپنا سرچ انجن دیتا ہے۔ یہ کسی AI کمپنی کو نہیں بھیجے جاتے۔",
+        ],
+      },
+      {
+        title: "رائے (فیڈبیک)",
+        points: [
+          "اگر آپ کسی جواب کے نیچے 👍 یا 👎 دبائیں تو ہم یہ رائے، سوال، دکھایا گیا جواب، زبان اور آپ کا لکھا ہوا تبصرہ (اگر لکھیں) محفوظ کرتے ہیں۔",
+          "اسے صرف غلط یا کمزور جوابات ڈھونڈنے اور درست کرنے کے لیے استعمال کیا جاتا ہے۔ اس میں کوئی نام، ای میل یا ڈیوائس کی شناخت نہیں ہوتی۔",
+        ],
+      },
+      {
+        title: "آپ کے فون میں رہنے والا ڈیٹا",
+        points: [
+          "محفوظ گفتگو، محفوظ کیے گئے حوالے، پڑھائی کی پیش رفت، روز کا ہدف، الارم اور یاد دہانی کی سیٹنگ، تھیم اور تحریر کا سائز صرف آپ کے فون میں رہتے ہیں۔",
+          "ایپ کا ڈیٹا صاف کرنے یا ایپ ہٹانے سے یہ سب مٹ جاتا ہے۔",
+        ],
+      },
+      {
+        title: "نوٹیفکیشن اور الارم",
+        points: [
+          "نماز کے الارم اور جمعہ کی یاد دہانی آپ کے فون پر ہی سیٹ ہوتے ہیں اور ہمیں کچھ بھیجے بغیر چلتے ہیں۔ آپ انہیں ایپ یا فون کی سیٹنگ سے بند کر سکتے ہیں۔",
+        ],
+      },
+      {
+        title: "سرور لاگز",
+        points: [
+          "ہر ویب سائٹ کی طرح ہمارا سرور سکیورٹی اور خرابیاں دور کرنے کے لیے مختصر مدت کے تکنیکی لاگز (جیسے IP ایڈریس، وقت اور درخواست) رکھتا ہے۔ انہیں آپ کو پہچاننے یا آپ کا پروفائل بنانے کے لیے استعمال نہیں کیا جاتا۔",
+        ],
+      },
+      {
+        title: "دوسری سروسز سے آنے والا مواد",
+        points: [
+          "ایپ کتابوں کا مواد ان سروسز سے ڈاؤن لوڈ کرتی ہے: AlQuran Cloud (قرآن کا متن اور تلاوت)، Hadith API by Fawaz Ahmed (jsDelivr کے ذریعے)، اور Cloudflare R2 و Cloudinary (کتابوں کی PDF)۔ ڈاؤن لوڈ کے وقت انہیں آپ کا IP ایڈریس ملتا ہے، جس پر ان کی اپنی پالیسیاں لاگو ہوتی ہیں۔ ہم انہیں اور کوئی معلومات نہیں دیتے۔",
+          "ایپ Google Play کے ذریعے فراہم کی جاتی ہے، جس کی اپنی پرائیویسی پالیسی ہے۔",
+        ],
+      },
+      {
+        title: "ہم کبھی کیا نہیں کرتے",
+        points: [
+          "نہ اکاؤنٹ یا لاگ اِن، نہ اشتہار، نہ کوئی اینالیٹکس یا ٹریکنگ ٹول۔ ہم آپ کی معلومات نہ بیچتے ہیں، نہ کرائے پر دیتے ہیں، نہ کسی کو دیتے ہیں۔",
+        ],
+      },
+      {
+        title: "بچے",
+        points: [
+          "علم 24x7 عام لوگوں کے لیے ہے اور 13 سال سے کم عمر بچوں کے لیے نہیں بنائی گئی۔ ہم جان بوجھ کر بچوں کی ذاتی معلومات جمع نہیں کرتے۔",
+        ],
+      },
+      {
+        title: "سکیورٹی",
+        points: ["ایپ اور ہمارے سرور کے درمیان تمام رابطہ انکرپٹڈ HTTPS کے ذریعے ہوتا ہے۔"],
+      },
+      {
+        title: "آپ کے اختیارات",
+        points: [
+          "آپ جب چاہیں لوکیشن یا نوٹیفکیشن کی اجازت نہ دیں، اپنی گفتگو مٹا دیں، یا ایپ کا ڈیٹا صاف کر دیں۔ اپنی بھیجی ہوئی رائے کے بارے میں پوچھنے یا اسے ہٹوانے کے لیے سوال اور تقریباً وقت کے ساتھ ہمیں لکھیں۔",
+        ],
+      },
+      {
+        title: "اس پالیسی میں تبدیلی",
+        points: [
+          "اگر یہ پالیسی بدلی تو ہم یہ صفحہ اور اوپر کی تاریخ بدل دیں گے۔ اہم تبدیلیاں ایپ کے اپ ڈیٹ نوٹس میں بھی بتائی جائیں گی۔",
+        ],
+      },
+    ],
+    contactTitle: "رابطہ",
+    contactText: "اس پالیسی یا اپنے ڈیٹا کے بارے میں سوالات:",
+    email: "support@ilm24x7.in",
   },
 };
 

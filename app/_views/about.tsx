@@ -103,6 +103,7 @@ export default function AboutView({ lang }: { lang: Lang }) {
                 </li>
               ))}
             </ul>
+            <p className="mt-5 text-sm text-text">{t.rightsText}</p>
           </div>
         </section>
 

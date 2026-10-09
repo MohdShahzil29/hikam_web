@@ -140,6 +140,7 @@ export function SiteFooter({ lang }: { lang: Lang }) {
           <Link href={localHref(lang, "/features")} className="hover:text-cream">{t.features}</Link>
           <Link href={localHref(lang, "/about")} className="hover:text-cream">{t.about}</Link>
           <a href="#download" className="hover:text-cream">{t.download}</a>
+          <Link href={localHref(lang, "/privacy")} className="hover:text-cream">{t.privacy}</Link>
         </div>
         <p dir="ltr">© {new Date().getFullYear()} Ilm24x7</p>
       </div>

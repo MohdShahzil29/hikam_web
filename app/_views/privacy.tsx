@@ -1,5 +1,6 @@
+import Link from "next/link";
 import { SiteFooter, SiteHeader, Star } from "../_components/site";
-import { dicts, type Lang } from "../_i18n/dict";
+import { dicts, localHref, type Lang } from "../_i18n/dict";
 
 // The app's privacy policy, linked from the Play Store listing and the app's About screen
 export default function PrivacyView({ lang }: { lang: Lang }) {
@@ -41,6 +42,11 @@ export default function PrivacyView({ lang }: { lang: Lang }) {
               <a href={`mailto:${t.email}`} dir="ltr" className="font-semibold text-gold-deep underline">
                 {t.email}
               </a>
+            </p>
+            <p className="mt-2">
+              <Link href={localHref(lang, "/delete-data")} className="font-semibold text-gold-deep underline">
+                {t.deleteLink}
+              </Link>
             </p>
           </div>
         </section>

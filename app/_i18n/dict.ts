@@ -283,6 +283,49 @@ const en = {
     contactTitle: "Contact",
     contactText: "Questions about this policy or your data:",
     email: "support@ilm24x7.in",
+    deleteLink: "How to delete your data",
+  },
+  deleteData: {
+    meta: {
+      title: "Delete your data — Ilm24x7",
+      description: "How to delete the data the Ilm24x7 app keeps, on your phone and on our server.",
+    },
+    alt: "اپنا ڈیٹا مٹائیں",
+    title: "Delete your data",
+    updated: "Last updated: October 2026",
+    intro:
+      "Ilm24x7 has no accounts. Almost everything the app keeps is stored only on your phone, and you can delete it yourself. The only thing kept on our server is feedback you chose to send under an answer. This page shows how to delete both.",
+    stepsTitle: "Delete feedback you sent",
+    steps: [
+      "Email support@ilm24x7.in with the subject “Delete my data”.",
+      "Write the question you asked and roughly when you sent the feedback. Feedback has no name or account attached, so this is how we find it.",
+      "We delete it within 30 days and reply to confirm.",
+    ],
+    emailButton: "Email us to delete your data",
+    email: "support@ilm24x7.in",
+    sections: [
+      {
+        title: "Data on your phone",
+        points: [
+          "Saved chats: delete them in the app under Chat history.",
+          "Everything else (bookmarks, reading progress, daily goal and streak, alarm settings, theme and text size): clear the app's data in your phone's Settings → Apps → Ilm24x7 → Storage, or uninstall the app.",
+          "This is deleted at once. None of it is ever sent to our server.",
+        ],
+      },
+      {
+        title: "What is deleted",
+        points: [
+          "From your feedback: the question, the answer that was shown, your 👍 or 👎 rating, the language and any comment you wrote. Nothing from it is kept.",
+        ],
+      },
+      {
+        title: "What is kept",
+        points: [
+          "Our server's short-lived technical logs (such as IP address, time and the request made) are not linked to your feedback. They are deleted automatically within 30 days.",
+          "Your location is never sent to us, so there is nothing to delete on our side.",
+        ],
+      },
+    ],
   },
 };
 
@@ -567,6 +610,49 @@ const ur: Dict = {
     contactTitle: "رابطہ",
     contactText: "اس پالیسی یا اپنے ڈیٹا کے بارے میں سوالات:",
     email: "support@ilm24x7.in",
+    deleteLink: "اپنا ڈیٹا کیسے مٹائیں",
+  },
+  deleteData: {
+    meta: {
+      title: "اپنا ڈیٹا مٹائیں — علم 24x7",
+      description: "علم 24x7 ایپ کا ڈیٹا، آپ کے فون پر اور ہمارے سرور پر، کیسے مٹایا جائے۔",
+    },
+    alt: "Delete your data",
+    title: "اپنا ڈیٹا مٹائیں",
+    updated: "آخری تبدیلی: اکتوبر 2026",
+    intro:
+      "علم 24x7 میں کوئی اکاؤنٹ نہیں ہوتا۔ ایپ کا تقریباً سارا ڈیٹا صرف آپ کے فون میں رہتا ہے اور آپ اسے خود مٹا سکتے ہیں۔ ہمارے سرور پر صرف وہ رائے (فیڈبیک) رہتی ہے جو آپ نے کسی جواب کے نیچے خود بھیجی ہو۔ یہ صفحہ دونوں کو مٹانے کا طریقہ بتاتا ہے۔",
+    stepsTitle: "اپنی بھیجی ہوئی رائے مٹوائیں",
+    steps: [
+      "support@ilm24x7.in پر ”Delete my data“ کے عنوان سے ای میل کریں۔",
+      "وہ سوال لکھیں جو آپ نے پوچھا تھا اور تقریباً کب رائے بھیجی تھی۔ رائے کے ساتھ کوئی نام یا اکاؤنٹ نہیں ہوتا، اس لیے اسی سے ہم اسے ڈھونڈتے ہیں۔",
+      "ہم 30 دن کے اندر اسے مٹا دیں گے اور جواب میں تصدیق کریں گے۔",
+    ],
+    emailButton: "ڈیٹا مٹوانے کے لیے ای میل کریں",
+    email: "support@ilm24x7.in",
+    sections: [
+      {
+        title: "آپ کے فون میں رہنے والا ڈیٹا",
+        points: [
+          "محفوظ گفتگو: ایپ میں ”پچھلی گفتگو“ سے مٹا دیں۔",
+          "باقی سب (محفوظ حوالے، پڑھائی کی پیش رفت، روز کا ہدف، الارم کی سیٹنگ، تھیم اور تحریر کا سائز): فون کی Settings → Apps → Ilm24x7 → Storage سے ایپ کا ڈیٹا صاف کریں، یا ایپ ہٹا دیں۔",
+          "یہ فوراً مٹ جاتا ہے۔ اس میں سے کچھ بھی ہمارے سرور کو نہیں بھیجا جاتا۔",
+        ],
+      },
+      {
+        title: "کیا مٹایا جاتا ہے",
+        points: [
+          "آپ کی رائے میں سے: سوال، دکھایا گیا جواب، آپ کا 👍 یا 👎، زبان اور آپ کا لکھا ہوا تبصرہ۔ اس میں سے کچھ بھی باقی نہیں رکھا جاتا۔",
+        ],
+      },
+      {
+        title: "کیا رکھا جاتا ہے",
+        points: [
+          "سرور کے مختصر مدت کے تکنیکی لاگز (جیسے IP ایڈریس، وقت اور درخواست) آپ کی رائے سے جڑے نہیں ہوتے۔ یہ 30 دن کے اندر خود بخود مٹ جاتے ہیں۔",
+          "آپ کی لوکیشن ہمیں کبھی نہیں بھیجی جاتی، اس لیے ہمارے پاس مٹانے کو کچھ نہیں۔",
+        ],
+      },
+    ],
   },
 };
 

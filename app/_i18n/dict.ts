@@ -132,7 +132,7 @@ const en = {
   about: {
     meta: {
       title: "About — Ilm24x7",
-      description: "Why Ilm24x7 was built, what it stands for, and the person behind it.",
+      description: "Why Ilm24x7 was built, what it stands for, and the team behind it.",
     },
     alt: "علم 24x7 کے بارے میں",
     title: "About Ilm24x7",
@@ -162,17 +162,13 @@ const en = {
         text: "Answers come from Ilm24x7's own search over trusted books, not from a chatbot. Your questions are not sent to any AI company.",
       },
     ],
-    founderTag: "THE FOUNDER",
-    role: "Founder & Developer",
-    founder: [
-      "Ilm24x7 is a one-person mission. Shahzil designed and built every part of it, from the app in your hand to the server that answers your questions, with a single goal: anyone who speaks Urdu should be able to reach authentic Islamic knowledge in seconds.",
-      "The hardest part was the books. Fatawa Razawiya's PDFs looked fine but were full of scrambled letters underneath, and Bahar-e-Shariat was only scanned images. So Shahzil taught a computer to read them: OCR that reads the Nastaleeq print page by page, and a program that learned, volume by volume, how to fix the broken letters by checking them against the Urdu of the Quran and Hadith.",
-      "Then came the brain of Ilm24x7: its own search engine, built from scratch. It understands that roza, روزہ and fasting mean the same thing, searches over 67,000 passages in an instant, and always shows the book and page an answer came from. No borrowed chatbot, nothing guessed.",
-    ],
-    stats: [
-      ["67,000+", "passages"],
-      ["36,000+", "hadith"],
-      ["25,000+", "fatwa pages"],
+    teamTag: "OUR TEAM",
+    teamTitle: "The people behind Ilm24x7",
+    team: [
+      { name: "Akib", role: "CEO", image: "/akib-v2.jpeg" },
+      { name: "Mohd Shahzil", role: "Co-Founder & Developer", image: "/shahzil.jpeg" },
+      { name: "Zubair Sheikh", role: "Co-Founder & Graphic Designer", image: "/zubair.jpeg" },
+      { name: "Qari Mohd Rehan Aarfee", role: "Researcher", image: "/qari-rehan-v2.jpeg" },
     ],
     thanksTitle: "With thanks",
     thanksText:
@@ -458,7 +454,7 @@ const ur: Dict = {
   about: {
     meta: {
       title: "ہمارے بارے میں — علم 24x7",
-      description: "علم 24x7 کیوں بنایا گیا، یہ کس بات پر قائم ہے، اور اس کے پیچھے کون ہے۔",
+      description: "علم 24x7 کیوں بنایا گیا، یہ کس بات پر قائم ہے، اور اس کے پیچھے کون سی ٹیم ہے۔",
     },
     alt: "About Ilm24x7",
     title: "علم 24x7 کے بارے میں",
@@ -488,17 +484,13 @@ const ur: Dict = {
         text: "جوابات علم 24x7 کے اپنے سرچ انجن سے آتے ہیں جو معتبر کتابوں میں تلاش کرتا ہے، کسی چیٹ بوٹ سے نہیں۔ آپ کے سوالات کسی اے آئی کمپنی کو نہیں بھیجے جاتے۔",
       },
     ],
-    founderTag: "بانی",
-    role: "بانی اور ڈویلپر",
-    founder: [
-      "علم 24x7 ایک شخص کا مشن ہے۔ شہزل نے اس کا ہر حصہ خود ڈیزائن کیا اور بنایا، آپ کے ہاتھ میں موجود ایپ سے لے کر اس سرور تک جو آپ کے سوالوں کا جواب دیتا ہے۔ مقصد ایک ہی تھا: اردو بولنے والا ہر شخص چند سیکنڈ میں مستند اسلامی علم تک پہنچ سکے۔",
-      "سب سے مشکل کام کتابیں تھیں۔ فتاویٰ رضویہ کی PDF دیکھنے میں ٹھیک تھیں مگر اندر سے حروف بگڑے ہوئے تھے، اور بہارِ شریعت صرف اسکین شدہ تصویروں کی شکل میں تھی۔ اس لیے شہزل نے کمپیوٹر کو انہیں پڑھنا سکھایا: OCR جو نستعلیق چھپائی کو صفحہ بہ صفحہ پڑھتا ہے، اور ایک پروگرام جس نے جلد بہ جلد سیکھا کہ بگڑے ہوئے حروف کو قرآن و حدیث کی اردو سے ملا کر کیسے درست کیا جائے۔",
-      "پھر بنا علم 24x7 کا دماغ: اس کا اپنا سرچ انجن، بالکل شروع سے۔ یہ سمجھتا ہے کہ roza، روزہ اور fasting ایک ہی چیز ہیں، 67,000 سے زیادہ عبارتوں میں پل بھر میں تلاش کرتا ہے، اور ہمیشہ بتاتا ہے کہ جواب کس کتاب اور کس صفحے سے ہے۔ نہ کوئی ادھار کا چیٹ بوٹ، نہ کوئی اندازہ۔",
-    ],
-    stats: [
-      ["67,000+", "عبارتیں"],
-      ["36,000+", "احادیث"],
-      ["25,000+", "فتاویٰ کے صفحات"],
+    teamTag: "ہماری ٹیم",
+    teamTitle: "علم 24x7 کے پیچھے والے لوگ",
+    team: [
+      { name: "عاکب", role: "سی ای او", image: "/akib-v2.jpeg" },
+      { name: "محمد شہزل", role: "کو فائونڈر اور ڈویلپر", image: "/shahzil.jpeg" },
+      { name: "زبیر شیخ", role: "کو فائونڈر اور گرافک ڈیزائنر", image: "/zubair.jpeg" },
+      { name: "قاری محمد ریحان عارفی", role: "ریسرچر", image: "/qari-rehan-v2.jpeg" },
     ],
     thanksTitle: "شکریہ",
     thanksText:

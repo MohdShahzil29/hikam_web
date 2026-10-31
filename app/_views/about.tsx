@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { altClass, DownloadSection, SiteFooter, SiteHeader, Star } from "../_components/site";
 import { dicts, type Lang } from "../_i18n/dict";
 
@@ -50,42 +51,23 @@ export default function AboutView({ lang }: { lang: Lang }) {
           </div>
         </section>
 
-        <section className="reveal mx-auto max-w-3xl px-4 py-12 md:py-14">
-          <p className="text-xs font-semibold tracking-[0.3em] text-gold-deep">{t.founderTag}</p>
-          <div className="mt-4 flex flex-col gap-6 rounded-3xl border border-gold/25 p-6 sm:flex-row sm:items-start">
-            <div
-              dir="ltr"
-              className="grid size-24 shrink-0 place-items-center self-center rounded-full bg-teal font-display text-3xl text-gold sm:self-start"
-            >
-              MS
-            </div>
-            <div>
-              <h2 className="font-display text-3xl text-text">Mohd Shahzil</h2>
-              <p className="text-sm font-semibold text-gold-deep">{t.role}</p>
-              <div className="mt-3 space-y-3 text-text">
-                {t.founder.map((p) => (
-                  <p key={p}>{p}</p>
-                ))}
-              </div>
-              <dl className="mt-5 grid grid-cols-3 gap-2 text-center">
-                {t.stats.map(([n, label]) => (
-                  <div key={label} className="rounded-xl border border-gold/25 py-3">
-                    <dt dir="ltr" className="font-display text-xl text-text sm:text-2xl">{n}</dt>
-                    <dd className="text-xs text-text">{label}</dd>
+        <section className="border-b border-gold/25">
+          <div className="mx-auto max-w-6xl px-4 py-12 md:py-14">
+            <p className="reveal text-xs font-semibold tracking-[0.3em] text-gold-deep">{t.teamTag}</p>
+            <h2 className="reveal mt-2 font-display text-3xl text-text">{t.teamTitle}</h2>
+            <ul className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+              {t.team.map((m) => (
+                <li key={m.image} className="reveal text-center">
+                  <div className="relative mx-auto aspect-square w-full max-w-44 overflow-hidden rounded-2xl border border-gold/25 bg-teal">
+                    <Image src={m.image} alt={m.name} fill className="object-cover object-top" sizes="180px" />
                   </div>
-                ))}
-              </dl>
-              <a
-                href="https://github.com/MohdShahzil29"
-                dir="ltr"
-                className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-text hover:text-gold-deep"
-              >
-                <svg viewBox="0 0 24 24" className="size-4" fill="currentColor" aria-hidden>
-                  <path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2Z" />
-                </svg>
-                github.com/MohdShahzil29
-              </a>
-            </div>
+                  <h3 className="mt-3 font-display text-lg text-text sm:text-xl">
+                    <bdi>{m.name}</bdi>
+                  </h3>
+                  <p className="text-sm font-semibold text-gold-deep">{m.role}</p>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 

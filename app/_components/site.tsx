@@ -2,12 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { dicts, localHref, type Lang } from "../_i18n/dict";
 
-// Android APK on Google Drive. `confirm=t` skips Drive's "too large to scan" page, and Drive sends the file as an
-// attachment, so clicking downloads it right away without leaving the page.
-const APK_URL =
-  "https://drive.usercontent.google.com/download?id=1LguVNaFKkNOGvmCpv-1Zo4CuiXpoOYcd&export=download&confirm=t";
-// Replace with the real listing once the app is on the App Store
-const APP_STORE_URL = "#";
+const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.mohdshahzil.Hikam";
 
 // The 8-point star the app uses as its motif
 const STAR =
@@ -28,8 +23,9 @@ export const altClass = (lang: Lang) => (lang === "en" ? "font-arabic text-xl" :
 export function DownloadButton({ lang, className = "" }: { lang: Lang; className?: string }) {
   return (
     <a
-      href={APK_URL}
-      download
+      href={PLAY_STORE_URL}
+      target="_blank"
+      rel="noopener noreferrer"
       className={`inline-flex h-11 items-center gap-2 rounded-full bg-gold px-5 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:brightness-110 ${className}`}
     >
       <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden>
@@ -40,26 +36,21 @@ export function DownloadButton({ lang, className = "" }: { lang: Lang; className
   );
 }
 
-function StoreButton({ href, store, label }: { href: string; store: string; label: string }) {
+function StoreButton({ href, label }: { href: string; label: string }) {
   return (
     <a
       href={href}
-      download={store === "play" || undefined}
+      target="_blank"
+      rel="noopener noreferrer"
       dir="ltr"
       className="flex h-13 min-w-44 items-center gap-3 rounded-xl border border-cream/20 bg-ink px-4 text-cream transition hover:-translate-y-0.5 hover:border-gold"
     >
-      {store === "play" ? (
-        <svg viewBox="0 0 24 24" className="size-6" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-          <path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      ) : (
-        <svg viewBox="0 0 24 24" className="size-6" fill="currentColor" aria-hidden>
-          <path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8-.1 0-2.5-1-2.5-3.9ZM14 5.4c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.6 2.8-1.4Z" />
-        </svg>
-      )}
+      <svg viewBox="0 0 24 24" className="size-6" fill="currentColor" aria-hidden>
+        <path d="M3.6 2.3 14.1 12 3.6 21.7A1.5 1.5 0 0 1 1.5 20.4V3.6A1.5 1.5 0 0 1 3.6 2.3Zm11.7 10.4 2.7 1.5 3.8-2.2a1.2 1.2 0 0 0 0-2.1l-3.8-2.2-2.7 1.5 2.3 1.7-2.3 1.8Zm-1.5 1.5L4.8 22.4l8.2-4.7 2.5 1.4-1.7-4.9Zm0-4.4 1.7-4.9-2.5 1.4L4.8 1.6l9 8.2Z" />
+      </svg>
       <span className="leading-tight">
         <span className="block text-[10px] uppercase tracking-wider text-cream/85">{label}</span>
-        <span className="block text-base font-semibold">{store === "play" ? "Android" : "App Store"}</span>
+        <span className="block text-base font-semibold">Google Play</span>
       </span>
     </a>
   );
@@ -119,8 +110,7 @@ export function DownloadSection({ lang }: { lang: Lang }) {
         <h2 className="relative mt-4 font-display text-3xl">{t.title}</h2>
         <p className="relative mx-auto mt-2 max-w-md text-cream/85">{t.text}</p>
         <div className="relative mt-6 flex flex-wrap justify-center gap-3">
-          <StoreButton href={APK_URL} store="play" label={t.play} />
-          <StoreButton href={APP_STORE_URL} store="apple" label={t.apple} />
+          <StoreButton href={PLAY_STORE_URL} label={t.play} />
         </div>
       </div>
     </section>

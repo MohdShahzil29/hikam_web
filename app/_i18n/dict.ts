@@ -8,9 +8,8 @@ const en = {
   nav: { features: "Features", about: "About", download: "Download", privacy: "Privacy", other: "اردو", home: "Ilm24x7 home" },
   download: {
     title: "Download Ilm24x7",
-    text: "Free on Android and iOS.",
-    play: "Download for",
-    apple: "Download on the",
+    text: "Free on Android.",
+    play: "Get it on",
   },
   home: {
     meta: {
@@ -24,7 +23,7 @@ const en = {
       alt: "ہر سوال کا جواب، دلیل کے ساتھ",
       text: "Ask in Roman Urdu, Urdu or English. Ilm24x7 answers from the Quran, Hadith and Fatawa Razawiya, and shows you the exact ayah, hadith or page it comes from.",
       chips: ["Namaz & Azan", "Quran", "Hadith", "Fatawa", "Qibla"],
-      free: "Free · Android & iOS",
+      free: "Free · Android",
     },
     features: {
       title: "Everything in one place",
@@ -335,9 +334,8 @@ const ur: Dict = {
   nav: { features: "خصوصیات", about: "ہمارے بارے میں", download: "ڈاؤن لوڈ", privacy: "پرائیویسی", other: "English", home: "علم 24x7 ہوم" },
   download: {
     title: "علم 24x7 ڈاؤن لوڈ کریں",
-    text: "اینڈرائیڈ اور آئی فون پر بالکل مفت۔",
-    play: "Download for",
-    apple: "Download on the",
+    text: "اینڈرائیڈ پر بالکل مفت۔",
+    play: "Get it on",
   },
   home: {
     meta: {
@@ -351,7 +349,7 @@ const ur: Dict = {
       alt: "Every answer, with its source",
       text: "رومن اردو، اردو یا انگریزی میں سوال پوچھیں۔ علم 24x7 قرآن، حدیث اور فتاویٰ رضویہ سے جواب دیتا ہے، اور بتاتا ہے کہ وہ کس آیت، حدیث یا صفحے سے لیا گیا ہے۔",
       chips: ["نماز اور اذان", "قرآن", "حدیث", "فتاویٰ", "قبلہ"],
-      free: "مفت · اینڈرائیڈ اور آئی فون",
+      free: "مفت · اینڈرائیڈ",
     },
     features: {
       title: "سب کچھ ایک جگہ",

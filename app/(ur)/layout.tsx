@@ -2,6 +2,7 @@ import type { Viewport } from "next";
 import { Noto_Nastaliq_Urdu } from "next/font/google";
 import { amiri, manrope, marcellus } from "../_i18n/fonts";
 import "../globals.css";
+import SmoothScroll from "../_components/smooth-scroll";
 
 // Nastaliq for running Urdu text. Not preloaded: the fonts CSS is shared, so a preload would hit English pages too;
 // browsers only fetch it where Urdu text actually uses it.
@@ -18,7 +19,10 @@ export default function UrduLayout({ children }: { children: React.ReactNode }) 
       dir="rtl"
       className={`${manrope.variable} ${marcellus.variable} ${amiri.variable} ${nastaliq.variable} antialiased`}
     >
-      <body>{children}</body>
+      <body>
+        <SmoothScroll />
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { altClass, DownloadSection, SiteFooter, SiteHeader, Star } from "../_components/site";
 import { dicts, type Lang } from "../_i18n/dict";
+import TeamSection from "../_components/team";
 
 export default function AboutView({ lang }: { lang: Lang }) {
   const t = dicts[lang].about;
@@ -51,25 +51,7 @@ export default function AboutView({ lang }: { lang: Lang }) {
           </div>
         </section>
 
-        <section className="border-b border-gold/25">
-          <div className="mx-auto max-w-6xl px-4 py-12 md:py-14">
-            <p className="reveal text-xs font-semibold tracking-[0.3em] text-gold-deep">{t.teamTag}</p>
-            <h2 className="reveal mt-2 font-display text-3xl text-text">{t.teamTitle}</h2>
-            <ul className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
-              {t.team.map((m) => (
-                <li key={m.image} className="reveal text-center">
-                  <div className="relative mx-auto aspect-square w-full max-w-44 overflow-hidden rounded-2xl border border-gold/25 bg-teal">
-                    <Image src={m.image} alt={m.name} fill className="object-cover object-top" sizes="180px" />
-                  </div>
-                  <h3 className="mt-3 font-display text-lg text-text sm:text-xl">
-                    <bdi>{m.name}</bdi>
-                  </h3>
-                  <p className="text-sm font-semibold text-gold-deep">{m.role}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
+        <TeamSection lang={lang} />
 
         <section className="border-t border-gold/25">
           <div className="reveal mx-auto max-w-3xl px-4 py-12 md:py-14">
